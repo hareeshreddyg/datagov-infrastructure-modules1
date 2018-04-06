@@ -9,6 +9,5 @@ resource "aws_instance" "catalog-jumpbox" {
 
   tags {
     Name = "catalog-jumpbox",
-    Owner = "Hareesh Reddy"
   }
 }
