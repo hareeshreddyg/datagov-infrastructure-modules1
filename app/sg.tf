@@ -136,3 +136,73 @@ resource "aws_security_group" "ssh-sg" {
   }
 
 }
+# inventory security group
+resource "aws_security_group" "inventory-sg" {
+  name        = "inventory-sg-tf"
+  description = "Inventory security group"
+  vpc_id      = "${data.terraform_remote_state.vpc.vpc_id}"
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+
+}
+# crm security group
+resource "aws_security_group" "crm-sg" {
+  name        = "crm-sg-tf"
+  description = "CRM security group"
+  vpc_id      = "${data.terraform_remote_state.vpc.vpc_id}"
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+
+}
+# dashboard security group
+resource "aws_security_group" "dashboard-sg" {
+  name        = "dashboard-sg-tf"
+  description = "Dashboard security group"
+  vpc_id      = "${data.terraform_remote_state.vpc.vpc_id}"
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+
+}
+# wordpress security group
+resource "aws_security_group" "wordpress-sg" {
+  name        = "wordpress-sg-tf"
+  description = "Wordpress security group"
+  vpc_id      = "${data.terraform_remote_state.vpc.vpc_id}"
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+
+}
+# static security group
+resource "aws_security_group" "static-sg" {
+  name        = "static-sg-tf"
+  description = "Static security group"
+  vpc_id      = "${data.terraform_remote_state.vpc.vpc_id}"
+
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+
+}
